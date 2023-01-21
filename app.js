@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 
 app.use('/auth', require('./routes/auth'));
+app.use('/competitions', require('./routes/compettition'));
 
 app.get('/', async (req, res) => {
   return res.status(200).json({ msg: 'backend sucessfully connected' });
