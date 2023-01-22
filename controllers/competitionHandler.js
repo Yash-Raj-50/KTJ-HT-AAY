@@ -99,62 +99,6 @@ const createCompetition = async (req, res) => {
   }
 };
 
-const updateCompetition = async (req, res) => {
-  const compId = req.query.id;
-  if (!compId) return res.status(400).json({ msg: 'provide id to be updated' });
-
-  //get all the fields to be updated from the update competition
-  const updatedInfo = req.body;
-  if (!updatedInfo) return res.status(400).json({ msg: 'nothing to update' });
-
-  try {
-    //find that competition
-    const competition = await Competition.findById(compId);
-    if (!competition)
-      return res.status(404).json({ msg: "can't find competition" });
-
-    //update the required one
-    for (let key in updatedInfo) {
-      competition[key] = updatedInfo[key];
-    }
-    await competition.save();
-
-    return res.status(200).send(competition);
-  } catch (error) {
-    // return res.json({ msg: `${error.message}` });
-    res.sendStatus(500);
-  }
-};
-
-const deleteCompetition = async (req, res) => {
-  const user = req.user;
-  const compId = req.query.id;
-  if (!compId) return res.status(400).json({ msg: 'provide id to be deleted' });
-  try {
-    const competition = await Competition.findById(compId);
-    if (!competition)
-      return res.status(404).json({ msg: "can't find competition" });
-
-    await competition.delete();
-
-    //fetch all competitions
-    const allCreatedCompetitions = user.createdCompetitions;
-
-    //remove the current competition
-    const newCreatedCompetitions = allCreatedCompetitions.filter((id) => {
-      if (id !== compId) return id;
-    });
-
-    user.createdCompetitions = newCreatedCompetitions;
-    await user.save();
-
-    return res.sendStatus(200);
-  } catch (error) {
-    // return res.json({ msg: `${error.message}` });
-    res.sendStatus(500);
-  }
-};
-
 const createRequest = async (req, res) => {
   const user = req.user;
   const compId = req.query.id;
@@ -244,8 +188,6 @@ module.exports = {
   getUserCreatedCompetitions,
   getUserAppliedCompetitions,
   createCompetition,
-  updateCompetition,
-  deleteCompetition,
   createRequest,
   responseRequest,
 };

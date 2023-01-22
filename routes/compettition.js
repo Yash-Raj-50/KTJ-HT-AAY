@@ -9,8 +9,6 @@ const {
   getUserCreatedCompetitions,
   getUserAppliedCompetitions,
   createCompetition,
-  updateCompetition,
-  deleteCompetition,
   createRequest,
   responseRequest,
 } = require('../controllers/competitionHandler.js');
@@ -44,8 +42,6 @@ router.get('/all', getAllCompetitions);
 router.get('/created-comp', auth, getUserCreatedCompetitions);
 router.get('/applied-comp', auth, getUserAppliedCompetitions);
 router.post('/create', auth, createCompetition);
-router.put('/update', auth, updateCompetition);
-router.delete('/delete', auth, deleteCompetition);
 router.post('/create-request', auth, createRequest);
 router.post('/response-request', responseRequest);
 
