@@ -89,3 +89,30 @@ a {
   background-color: var(--accent2) !important;
   color: white;
 }
+
+.landingPageBox{
+  margin: 2.5vh 5%;
+  color: var(--nativeText);
+}
+.Footer{
+  position: absolute;
+  bottom: 0%;
+  height: 10vh;
+  background-color: var(--default2);
+  width: 100vw;
+}
+
+.new-contest{
+  align-items: center;
+  height: auto;
+  margin-block: 2.5vh;
+  background-color: var(--default2);
+  padding: 15px;
+  border-radius: 15px;
+
+}
+
+.items-space-beteen{
+  display: flex;
+  justify-content: space-between;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./navbar/navbar"
 import Head from "next/head";
 import Script from "next/script";
+import Footer from "./Footer/footer"
 
 export default function Layout({ children }) {
   return (
@@ -24,6 +25,7 @@ export default function Layout({ children }) {
       />
       <Navbar />
       <main>{children}</main>
+      <Footer/>
     </>
   );
 }

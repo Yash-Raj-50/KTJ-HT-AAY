@@ -29,11 +29,22 @@ const navbar = () => {
         </li>
       </ul>
     </div>
-    <Link href={"/login"} className="nav-link">
-    <button class="btn btn-outline-primary" type="submit">Login</button>
-    </Link>
+    <div>
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Current User
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark">
+    <li><Link class="dropdown-item" href={"/"}>User 1</Link></li>
+    <li><Link class="dropdown-item" href={"/"}>User 2</Link></li>
+    <li><Link class="dropdown-item" href={"/"}>User 3</Link></li>
+    <li><hr class="dropdown-divider"/></li>
+    <li><Link class="dropdown-item" href={"/login"} style={{color: "red"}}>Logout</Link></li>
+  </ul>
+</div>
+    </div>
     <Link href={"/register"} className="nav-link">
-    <button class="btn btn-outline-secondary" type="submit">Register</button>
+    <button class="btn btn-outline-primary" type="submit">Register</button>
     </Link>
     </div>
     </nav>
