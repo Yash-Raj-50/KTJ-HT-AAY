@@ -11,10 +11,6 @@ const userSchema = new db.Schema({
     unique: true,
     lowercase: true,
   },
-  password: {
-    type: String,
-    require: true,
-  },
   phone: {
     type: Number,
     require: true,

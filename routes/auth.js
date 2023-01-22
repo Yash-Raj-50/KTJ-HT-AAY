@@ -3,7 +3,6 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const cors = require('cors');
 const loginHandler = require('../controllers/loginHandler');
-const logoutHandler = require('../controllers/logoutHandler');
 const registrationHandler = require('../controllers/registrationHandler');
 const authHandler = require('../controllers/authHandler');
 const auth = require('../middlewares/auth.js');
@@ -36,6 +35,5 @@ router.use(cookieParser());
 router.get('/', auth, authHandler);
 router.post('/login', loginHandler);
 router.post('/register', registrationHandler);
-router.delete('/logout', auth, logoutHandler);
 
 module.exports = router;

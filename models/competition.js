@@ -12,14 +12,10 @@ const competitionSchema = new db.Schema({
   totalSeats: {
     type: Number,
     require: true,
-    unique: true,
   },
   availableSeats: {
     type: Number,
     require: true,
-  },
-  expiry: {
-    type: Date,
   },
   creater: {
     type: db.Schema.Types.ObjectId,

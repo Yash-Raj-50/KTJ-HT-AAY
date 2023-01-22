@@ -7,10 +7,12 @@ const auth = require('../middlewares/auth.js');
 const {
   getAllCompetitions,
   getUserCreatedCompetitions,
+  getUserAppliedCompetitions,
   createCompetition,
   updateCompetition,
   deleteCompetition,
-  getUserAppliedCompetitions,
+  createRequest,
+  responseRequest,
 } = require('../controllers/competitionHandler.js');
 
 const router = express.Router();
@@ -44,5 +46,7 @@ router.get('/applied-comp', auth, getUserAppliedCompetitions);
 router.post('/create', auth, createCompetition);
 router.put('/update', auth, updateCompetition);
 router.delete('/delete', auth, deleteCompetition);
+router.post('/create-request', auth, createRequest);
+router.post('/response-request', responseRequest);
 
 module.exports = router;

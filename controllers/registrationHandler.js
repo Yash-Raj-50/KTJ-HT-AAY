@@ -3,9 +3,9 @@ const User = require('../models/users');
 
 const registrationHandler = async (req, res) => {
   try {
-    const { name, email, password, phone } = req.body;
+    const { name, email, phone } = req.body;
 
-    if (!name || !email || !password || !phone)
+    if (!name || !email || !phone)
       return res.status(400).json({ msg: 'details missing' });
 
     const duplicateEmail = await User.findOne({ email });
@@ -16,8 +16,7 @@ const registrationHandler = async (req, res) => {
     if (duplicatePhone)
       return res.status(409).json({ msg: 'Phone already exist, please login' });
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({ name, email, password: hashedPassword, phone });
+    const user = new User({ name, email, phone });
     await user.save();
 
     return res.sendStatus(201);
