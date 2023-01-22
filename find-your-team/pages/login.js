@@ -1,11 +1,12 @@
 import React from 'react'
+import Link from 'next/link'
 
 const login = () => {
   return (
-    <div className='container'>
-        <div className="row">
+    <div className="container page-box">
+        <div className="row loginForm">
             <div className="col"></div>
-            <div className="col-6 loginForm">
+            <div className="col-6">
             <form>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -18,9 +19,12 @@ const login = () => {
                 </div>
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="my-4">
+                    First time here? <Link href={"/register"} class="my-link"> Register</Link> here.
+                </div>
                 </form>
             </div>
             <div className="col"></div>

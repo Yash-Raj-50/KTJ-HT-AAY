@@ -33,7 +33,7 @@ const navbar = () => {
     <button class="btn btn-outline-primary" type="submit">Login</button>
     </Link>
     <Link href={"/register"} className="nav-link">
-    <button class="btn btn-outline-danger" type="submit">Register</button>
+    <button class="btn btn-outline-secondary" type="submit">Register</button>
     </Link>
     </div>
     </nav>
