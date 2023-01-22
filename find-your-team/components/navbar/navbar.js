@@ -1,13 +1,15 @@
 import React from 'react'
 import dashboard from "../../pages/dashboard"
 import Link from 'next/link'
+import Image from 'next/image'
+import logo from '../../public/logo.gif'
 const navbar = () => {
   return (
     <>
     <nav class="navbar navbar-expand-lg bg-body-tertiary my_navbar">
     <div class="container-fluid">
-    <div>
-      <i class="bi bi-laptop"></i>
+    <div class="logo">
+    <Image id="real" className='logo-image' src={logo} alt="animation here" />
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

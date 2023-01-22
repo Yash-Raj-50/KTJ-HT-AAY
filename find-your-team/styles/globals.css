@@ -112,7 +112,35 @@ a {
 
 }
 
-.items-space-beteen{
+.items-space-between{
   display: flex;
   justify-content: space-between;
+}
+
+.team-requests{
+  max-height: 35vh;
+  overflow-y: scroll;
+  background-color: var(--default2);
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 0.5vh;
+  color: var(--nativeText);
+}
+
+.team-item{
+  margin-block: 10px;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  margin-block: -20px;
+}
+.logo-image{
+  height: inherit;
+  width: inherit;
+}
+
+.card{
+  background-color: var(--nativebackground);
 }
