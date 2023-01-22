@@ -7,8 +7,8 @@
   /* color schemas */
     --default1: gray;
     --default2: rgb(207, 207, 207);
-    --accent1: blue;
-    --accent2:violet;
+    --accent1: rgb(0, 162, 211);
+    --accent2:rgb(0, 54, 124);
     --nativeText: black;
     --nativebackground: rgb(219, 219, 219);
 }
@@ -17,8 +17,8 @@
   :root {
     --default1: gray;
     --default2: rgb(39, 39, 41);
-    --accent1: blue;
-    --accent2:violet;
+    --accent1: rgb(0, 162, 211);
+    --accent2:rgb(0, 54, 124);
     --nativeText: white;
     --nativebackground: rgb(46, 46, 46);
   }
@@ -56,4 +56,91 @@ a {
 
 .loginForm{
   align-items: center;
+  height: inherit;
+}
+
+.page-box{
+  height: 90vh;
+}
+
+.my-link{
+  color: var(--accent1);
+}
+/*Boot strap css*/
+.btn-primary {
+  background-color: var(--accent1) !important;
+  border-color: var(--accent1) transparent;
+}
+
+.btn-outline-primary{
+  border-color: var(--accent1) !important;
+  color: var(--accent1);
+}
+.btn-outline-primary:hover{
+  background-color: var(--accent1) !important;
+  color: white;
+}
+
+.btn-outline-secondary{
+  border-color: var(--accent2) !important;
+  color: var(--accent2);
+}
+.btn-outline-secondary:hover{
+  background-color: var(--accent2) !important;
+  color: white;
+}
+
+.landingPageBox{
+  margin: 2.5vh 5%;
+  color: var(--nativeText);
+}
+.Footer{
+  position: absolute;
+  bottom: 0%;
+  height: 10vh;
+  background-color: var(--default2);
+  width: 100vw;
+}
+
+.new-contest{
+  align-items: center;
+  height: auto;
+  margin-block: 2.5vh;
+  background-color: var(--default2);
+  padding: 15px;
+  border-radius: 15px;
+
+}
+
+.items-space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+.team-requests{
+  max-height: 35vh;
+  overflow-y: scroll;
+  background-color: var(--default2);
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 0.5vh;
+  color: var(--nativeText);
+}
+
+.team-item{
+  margin-block: 10px;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+  margin-block: -20px;
+}
+.logo-image{
+  height: inherit;
+  width: inherit;
+}
+
+.card{
+  background-color: var(--nativebackground);
 }
